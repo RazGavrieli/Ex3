@@ -211,10 +211,10 @@ void analyzeAtbashe(char *wordAtbashed)
                 {
                     if (curr!=wordAtbashed[j-i]&&curr!=strrev(wordAtbashed)[j-i]) flag = 1;
                     else j++;
-                } else { 
+                } else if (curr==' '||curr=='\n'||curr=='\t') { 
                     j++; 
                     p++;
-                 }
+                 } else flag = 1;
             curr = txt[j];
             }
 
@@ -273,11 +273,10 @@ void analyzeAnagram()
                     if (currCountLetters[curr]==0) flag = 1;                 
                     else currCountLetters[curr]--;
                     j++;
-                } else {
+                } else if (curr==' '||curr=='\n'||curr=='\t') {
                     j++;
                     p++;
-                }
-            //printf("%c ",curr);
+                } else flag = 1;
             curr = txt[j];
             }                    
         if ((j-i)==strlen(word)+p) {
