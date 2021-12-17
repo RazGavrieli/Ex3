@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TXT 256
+#define TXT 1024
 #define WORD 30
 #define ascisize 128
 
@@ -209,7 +209,7 @@ void analyzeAtbashe(char *wordAtbashed)
             {
                 if ((curr>=65&&curr<=90)||(curr>=97&&curr<=122))
                 {
-                    if (curr!=wordAtbashed[j-i]&&curr!=strrev(wordAtbashed)[j-i]) flag = 1;
+                    if (curr!=wordAtbashed[j-i]&&curr!=strrev(wordAtbashed)[j-i]) flag = 1; // bee v vy doesnt work check y
                     else j++;
                 } else if (curr==' '||curr=='\n'||curr=='\t') { 
                     j++; 
